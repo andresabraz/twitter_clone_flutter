@@ -11,6 +11,8 @@ class TweetActionsWidget extends StatelessWidget {
   final Function()? onRetweet;
   final Function() onReply;
   final Function() onLike;
+  final bool didILike;
+  final bool didIRetweet;
 
   TweetActionsWidget({
     required this.replyCount,
@@ -19,6 +21,8 @@ class TweetActionsWidget extends StatelessWidget {
     required this.onReply,
     required this.onLike,
     this.onRetweet,
+    required this.didILike,
+    required this.didIRetweet,
   });
 
   @override
@@ -34,11 +38,13 @@ class TweetActionsWidget extends StatelessWidget {
         RetweetActionWidget(
           retweetCount: retweetCount,
           onRetweet: onRetweet,
+          didIRetweet: didIRetweet,
         ),
         SizedBox(width: 30),
         LikeActionWidget(
           likeCount: likeCount,
           onLike: onLike,
+          didILike: didILike,
         ),
       ],
     );

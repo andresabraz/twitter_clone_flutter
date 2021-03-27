@@ -6,12 +6,24 @@ abstract class BaseTweetActionWidget extends StatelessWidget {
   final int actionCount;
   final Widget icon;
   final Function()? onTap;
+  final bool? isReacted;
 
   BaseTweetActionWidget({
     required this.actionCount,
     required this.icon,
     required this.onTap,
+    this.isReacted,
   });
+
+  Color get reactedColor;
+  Widget get reactedIcon;
+
+  Widget get text => Text(actionCount.toString(),
+      style: isReacted != null && isReacted!
+          ? Styles.caption.apply(color: reactedColor)
+          : Styles.caption);
+
+  Widget get _icon => (isReacted != null && isReacted!) ? reactedIcon : icon;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +34,9 @@ abstract class BaseTweetActionWidget extends StatelessWidget {
         color: ProjectColors.transparent,
         child: Row(
           children: [
-            icon,
+            _icon,
             SizedBox(width: 5),
-            Text(actionCount.toString(), style: Styles.caption)
+            text,
           ],
         ),
       ),

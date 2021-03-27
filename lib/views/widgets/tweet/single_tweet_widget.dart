@@ -58,6 +58,8 @@ class SingleTweetWidget extends StatelessWidget {
                       onReply: onReply,
                       onLike: onLike,
                       onRetweet: onRetweet,
+                      didILike: tweet.didILike,
+                      didIRetweet: tweet.didIRetweet,
                     ),
                   ],
                 ),

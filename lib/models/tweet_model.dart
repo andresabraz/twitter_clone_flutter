@@ -1,20 +1,26 @@
 import 'package:twitter_clone/models/profile_model.dart';
 
 class TweetModel {
+  int id;
   DateTime createdAt;
   String content;
   int replyCount;
   int retweetCount;
   int likeCount;
   ProfileModel profile;
+  bool didILike;
+  bool didIRetweet;
 
   TweetModel({
+    required this.id,
     required this.createdAt,
     required this.content,
     required this.replyCount,
     required this.retweetCount,
     required this.likeCount,
     required this.profile,
+    required this.didILike,
+    required this.didIRetweet,
   });
 
   String get creationTimeAgo {

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/models/tweet_model.dart';
+import 'package:twitter_clone/views/resources/project_icons.dart';
+import 'package:twitter_clone/views/widgets/action_bottom_sheet_widget.dart';
+import 'package:twitter_clone/views/widgets/modal_bottom_sheet_base_widget.dart';
 import 'package:twitter_clone/views/widgets/tweet/single_tweet_widget.dart';
 
 import '../../routes.dart';
@@ -14,12 +17,34 @@ class TweetListWidget extends StatefulWidget {
 
 class _TweetListWidgetState extends State<TweetListWidget> {
   void _onRetweet(TweetModel tweet) {
-    setState(() {
-      tweet.didIRetweet = !tweet.didIRetweet;
-      tweet.retweetCount =
-          tweet.didIRetweet ? tweet.retweetCount + 1 : tweet.retweetCount - 1;
-    });
-    print("you want to retweet: ${tweet.id}");
+    if (!tweet.didIRetweet) {
+      showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(5),
+            topRight: Radius.circular(5),
+          ),
+        ),
+        builder: (context) {
+          return ModalBottomSheetBaseWidget([
+            ActionBottomSheetWidget(
+              icon: ProjectIcons.retweetAction,
+              onTap: () {
+                setState(() {
+                  tweet.didIRetweet = !tweet.didIRetweet;
+                  tweet.retweetCount = tweet.didIRetweet
+                      ? tweet.retweetCount + 1
+                      : tweet.retweetCount - 1;
+                });
+                Navigator.of(context).pop();
+              },
+              text: 'Retweet',
+            ),
+          ]);
+        },
+      );
+    }
   }
 
   void _onReply(TweetModel tweet) {

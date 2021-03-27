@@ -27,18 +27,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  void _onRetweet() {
-    Navigator.of(context).pushNamed(Routes.reply);
-  }
-
-  void _onReply() {
-    print('You like replay');
-  }
-
-  void _onLike() {
-    print('You like it');
-  }
-
   void _onTapCreateTweet() {
     Navigator.of(context).pushNamed(Routes.new_tweet);
   }

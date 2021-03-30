@@ -28,7 +28,7 @@ class TweetActionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.max,
+      mainAxisSize: MainAxisSize.min,
       children: [
         ReplyActionWidget(
           replyCount: replyCount,

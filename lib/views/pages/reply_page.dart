@@ -12,7 +12,7 @@ class _ReplyPageState extends State<ReplyPage> {
   final _textController = TextEditingController();
 
   void _onReply() {
-    print("replaying action tapped");
+    Navigator.of(context).pop();
   }
 
   @override

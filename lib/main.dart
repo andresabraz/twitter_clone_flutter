@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         typography: Typography.material2018(),
       ),
       routes: Routes.routes,
-      initialRoute: Routes.home,
+      initialRoute: Routes.login,
     );
   }
 }

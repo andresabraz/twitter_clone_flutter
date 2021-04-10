@@ -1,4 +1,7 @@
-#Sat Mar 20 11:21:15 BRT 2021
-base.0=/Users/andresabraz/Repositories/twitter_clone/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Sat Apr 10 12:30:24 BRT 2021
+base.0=/Volumes/Macintosh HD/Development/Repositories/twitter_clone_flutter/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.1=classes2.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=/Volumes/Macintosh HD/Development/Repositories/twitter_clone_flutter/build/app/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
